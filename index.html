@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xclusive House · Vilă privată în Moieciu — Bran | Toată casa. O singură cheie.</title>
-<meta name="description" content="Xclusive House, Moieciu — vilă privată de 160 m² pentru până la 10 oaspeți: 4 dormitoare, 4 băi, saună cu ciubăr, foișor cu grătar, vatră de foc. O singură rezervare, toată casa.">
-<meta property="og:title" content="Xclusive House · Toată casa. O singură cheie.">
-<meta property="og:description" content="Vilă privată în Moieciu, la poalele Bucegilor. 160 m², 4 dormitoare, saună & ciubăr — doar pentru voi.">
+<title>Xclusive House · Vilă privată în Moieciu — Bran | Închiriere în regim exclusiv</title>
+<meta name="description" content="Xclusive House, Moieciu — vilă de 160 m² închiriată exclusiv ca unitate întreagă, pentru maximum 10 oaspeți: 4 dormitoare, 4 băi, saună cu ciubăr, foișor cu grătar, vatră de foc. Rezervări telefonice directe.">
+<meta property="og:title" content="Xclusive House · Vilă privată în Moieciu — Bran">
+<meta property="og:description" content="Vilă de 160 m² în Moieciu, închiriată în regim exclusiv: 4 dormitoare, 4 băi, saună cu ciubăr, foișor cu grătar — pentru maximum 10 oaspeți.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/exterior.jpg">
 <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="%2315100D"/><text x="32" y="44" font-family="Georgia,serif" font-style="italic" font-size="36" fill="%23C9974C" text-anchor="middle">X</text></svg>'>
@@ -95,29 +95,6 @@ nav.solid{background:rgba(21,16,13,.88);backdrop-filter:blur(14px);-webkit-backd
 @media (max-width:960px){.nav-links{display:none}}
 @media (max-width:560px){.nav-call span{display:none}.nav-call{padding:10px 12px}}
 
-/* ---------- key rail (scroll progress) ---------- */
-.rail{
-  position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:80;
-  height:min(46vh,420px);width:34px;
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-  pointer-events:none;
-}
-.rail .track{position:relative;flex:1;width:1px;background:var(--line)}
-.rail .key{
-  position:absolute;left:50%;top:0;transform:translate(-50%,0);
-  width:26px;height:26px;color:var(--brass);
-  transition:transform .5s var(--ease);
-}
-.rail .keyhole{
-  width:16px;height:22px;color:var(--mut);transition:color .4s;
-}
-.rail .lbl{
-  font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);
-  writing-mode:vertical-rl;transition:color .4s;
-}
-.rail.open .keyhole,.rail.open .lbl{color:var(--brass)}
-@media (max-width:1180px){.rail{display:none}}
-
 /* ---------- hero ---------- */
 header{
   position:relative;min-height:100svh;
@@ -203,7 +180,7 @@ h2 em{font-style:italic;color:var(--brass)}
   padding:26px 28px;position:relative;
 }
 .inventar::before{
-  content:"INVENTARUL CASEI";position:absolute;top:-9px;left:22px;
+  content:"DOTĂRILE CASEI";position:absolute;top:-9px;left:22px;
   background:var(--ink);padding:0 10px;
   font-size:10px;letter-spacing:.3em;color:var(--brass);
 }
@@ -228,8 +205,8 @@ h2 em{font-style:italic;color:var(--brass)}
 .casa-media .ph:last-child{aspect-ratio:16/10}
 @media (max-width:900px){#casa .grid{grid-template-columns:1fr}}
 
-/* ---------- cheia (key tags) ---------- */
-#cheia{background:var(--coal);border-block:1px solid var(--line)}
+/* ---------- facilitati (tag cards) ---------- */
+#facilitati{background:var(--coal);border-block:1px solid var(--line)}
 .tags{
   display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px);
   margin-top:clamp(38px,5vw,60px);
@@ -261,7 +238,7 @@ h2 em{font-style:italic;color:var(--brass)}
 @media (max-width:600px){.tags{grid-template-columns:1fr}}
 
 /* ---------- keyhole reveal ---------- */
-#gaura-cheii{padding:0;background:var(--ink)}
+#priveliste{padding:0;background:var(--ink)}
 .keyhole-stage{
   position:relative;height:min(130vh,1100px);
 }
@@ -419,8 +396,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
     <span><b>Xclusive House</b><span>Moieciu · Bran</span></span>
   </a>
   <ul class="nav-links">
-    <li><a href="#casa">Casa</a></li>
-    <li><a href="#cheia">Cheia</a></li>
+    <li><a href="#casa">Vila</a></li>
+    <li><a href="#facilitati">Facilități</a></li>
     <li><a href="#galerie">Galerie</a></li>
     <li><a href="#imprejurimi">Împrejurimi</a></li>
     <li><a href="#tarife">Tarife</a></li>
@@ -432,34 +409,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
   </a>
 </nav>
 
-<!-- key scroll rail -->
-<div class="rail" id="rail" aria-hidden="true">
-  <svg class="key" id="railKey" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-    <circle cx="12" cy="6.5" r="3.6"/>
-    <path d="M12 10.1V20M12 16h3.4M12 19h2.4"/>
-  </svg>
-  <div class="track"></div>
-  <svg class="keyhole" viewBox="0 0 16 22" fill="currentColor" aria-hidden="true">
-    <path d="M8 1a5.2 5.2 0 0 1 2 10L11.6 19.5A1 1 0 0 1 10.6 21H5.4a1 1 0 0 1-1-1.5L6 11A5.2 5.2 0 0 1 8 1Z"/>
-  </svg>
-  <span class="lbl" id="railLbl">se descuie</span>
-</div>
-
 <header id="top">
   <div class="hero-bg">
     <img src="img/exterior.jpg" alt="Xclusive House — vila văzută din grădină, cu portalul de lemn masiv și bradul din curte" fetchpriority="high">
   </div>
   <div class="wrap hero-in">
     <p class="kick rv">Vilă privată · Drumul Carului, Moieciu — Bran</p>
-    <h1 class="rv d1">Toată casa.<em>O singură cheie.</em></h1>
-    <p class="hero-lead rv d2"><strong>160 m² doar pentru voi</strong> — patru dormitoare, patru băi, saună cu ciubăr, foișor cu grătar și o vatră de foc sub cerul muntelui. Fără vecini de cameră. Fără recepție. Casa e a voastră.</p>
+    <h1 class="rv d1">Vila întreagă.<em>În exclusivitate.</em></h1>
+    <p class="hero-lead rv d2"><strong>160 m², rezervate integral grupului dumneavoastră</strong> — patru dormitoare cu băi proprii, saună cu ciubăr, foișor cu grătar și vatră de foc, la poalele muntelui. O singură rezervare, pentru maximum 10 oaspeți.</p>
     <div class="cta-row rv d3">
       <a class="btn btn-ember" href="tel:+40731234398">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Rezervă direct
+        Rezervă telefonic
       </a>
-      <a class="btn btn-ghost" href="#cheia">
-        Vezi ce descuie cheia
+      <a class="btn btn-ghost" href="#facilitati">
+        Descoperiți facilitățile
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
       </a>
     </div>
@@ -475,13 +439,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
 
 <div class="marq" aria-hidden="true">
   <div class="marq-in" id="marq">
-    <span>casa întreagă, nu o cameră
+    <span>închiriere în regim exclusiv
       <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>
-      o singură rezervare, zece oaspeți
+      160 m² · 4 dormitoare · 4 băi · 10 oaspeți
       <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>
-      saună, ciubăr, vatră de foc
+      saună, ciubăr, foișor cu grătar
       <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>
-      la poalele muntelui, pe Drumul Carului
+      Drumul Carului, Moieciu — Bran
       <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4"/></svg>
     </span>
   </div>
@@ -489,13 +453,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
 
 <section id="casa">
   <div class="wrap">
-    <p class="eyebrow rv">Casa</p>
-    <h2 class="rv d1">O casă întreagă, <em>nu o cameră de pensiune.</em></h2>
+    <p class="eyebrow rv">Vila</p>
+    <h2 class="rv d1">Întreaga vilă, <em>într-o singură rezervare.</em></h2>
     <div class="grid">
       <div class="casa-copy rv d2">
-        <p>Cele mai bune vacanțe la munte nu se împart cu străini. La Xclusive House, <strong>rezervarea voastră închide poarta în urma voastră</strong>: living cu șemineu, bucătărie complet utilată, patru dormitoare cu baie proprie — totul într-o singură cheie.</p>
-        <p>Casa stă pe Drumul Carului, vechiul drum al negustorilor dintre Bran și Câmpulung, cu <strong>muntele la fereastră în fiecare cameră</strong>. Dimineața beți cafeaua pe terasă, în scaunele suspendate; seara focul se mută în vatra din grădină.</p>
-        <p>E genul de loc în care grupul se răsfiră firesc: unii la biliard, unii în saună, unii pe peluză la badminton — și <strong>toți la aceeași masă de zece</strong>, în foișor, când se aprinde grătarul.</p>
+        <p>Xclusive House se închiriază exclusiv ca unitate întreagă: <strong>living cu șemineu, bucătărie complet utilată și patru dormitoare cu baie proprie</strong>, într-o singură rezervare. Pe durata sejurului, proprietatea vă aparține în întregime.</p>
+        <p>Vila este situată pe Drumul Carului (E574), între Bran și Moieciu, cu <strong>vedere spre munte din fiecare cameră</strong>. Terasa cu scaune suspendate, grădina amenajată și vatra de foc completează spațiile exterioare de relaxare.</p>
+        <p>Configurația casei permite membrilor grupului să folosească în paralel facilitățile disponibile — sala de jocuri, sauna, peluza — iar <strong>foișorul cu masă de zece persoane</strong> reunește pe toată lumea la cină.</p>
         <div class="inventar">
           <ul>
             <li>4 dormitoare, 4 băi proprii</li>
@@ -527,60 +491,60 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
   </div>
 </section>
 
-<section id="cheia">
+<section id="facilitati">
   <div class="wrap">
-    <p class="eyebrow rv">Cheia</p>
-    <h2 class="rv d1">Ce descuie <em>cheia voastră.</em></h2>
-    <p class="sub rv d2">Șase locuri ale casei, toate incluse în aceeași rezervare. Nimic „contra cost", nimic „la cerere" — dacă e în curte, e al vostru.</p>
+    <p class="eyebrow rv">Facilități</p>
+    <h2 class="rv d1">Facilități <em>incluse.</em></h2>
+    <p class="sub rv d2">Toate facilitățile proprietății sunt incluse în tariful de închiriere, fără costuri suplimentare — disponibile pe întreaga durată a sejurului.</p>
     <div class="tags">
       <article class="tag rv">
         <span class="num">nr. 01</span>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2.5c-1.2 1.6-1.2 3.4 0 5s1.2 3.4 0 5M12 2.5c-1.2 1.6-1.2 3.4 0 5s1.2 3.4 0 5M17 2.5c-1.2 1.6-1.2 3.4 0 5s1.2 3.4 0 5M4 16h16v1.5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4Z"/></svg>
         <h3>Saună & ciubăr</h3>
-        <p>Butoiul finlandez din curte ține și sauna uscată, și ciubărul cu apă caldă — cu hubloul rotund spre munte.</p>
+        <p>Unitate exterioară de tip butoi finlandez, cu saună uscată și ciubăr cu apă caldă, disponibilă pe toată durata sejurului.</p>
       </article>
       <article class="tag rv d1">
         <span class="num">nr. 02</span>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V10M20 21V10M4 10h16M4 10 12 3l8 7M9 21v-6h6v6"/></svg>
         <h3>Foișor cu grătar</h3>
-        <p>Grătar zidit din cărămidă, cuptor și masă masivă de stejar pentru zece — seara se mută afară, pe orice vreme.</p>
+        <p>Grătar zidit din cărămidă, cuptor și masă masivă de stejar pentru zece persoane — utilizabil indiferent de vreme.</p>
       </article>
       <article class="tag rv d2">
         <span class="num">nr. 03</span>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
         <h3>Vatra de foc</h3>
-        <p>Cerc de bănci de lemn sub ghirlande de lumini, în jurul vetrei zidite — pentru povești care se termină târziu.</p>
+        <p>Zonă amenajată în grădină, cu vatră zidită, bănci de lemn și iluminat ambiental — pentru serile petrecute în aer liber.</p>
       </article>
       <article class="tag rv">
         <span class="num">nr. 04</span>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><path d="M12 3v3.5M12 17.5V21M3 12h3.5M17.5 12H21"/></svg>
         <h3>Sala de jocuri</h3>
-        <p>Biliard, ping-pong și darts înăuntru; fileu de badminton pe peluză. Turneele de familie sunt inevitabile.</p>
+        <p>Masă de biliard, tenis de masă și darts la interior; fileu de badminton pe peluza din grădină.</p>
       </article>
       <article class="tag rv d1">
         <span class="num">nr. 05</span>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7v-2a2 2 0 0 0-4 0ZM5 18v2M19 18v2"/></svg>
         <h3>Living cu șemineu</h3>
-        <p>Canapele de piele în jurul focului de lemne, Smart TV și sistem audio — seara de after-munte, rezolvată.</p>
+        <p>Canapele de piele, șemineu pe lemne, Smart TV și sistem audio — spațiul principal de relaxare al casei.</p>
       </article>
       <article class="tag rv d2">
         <span class="num">nr. 06</span>
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18M3 10v9a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-9M3 10 5 4h14l2 6M12 14v3M8 14v3M16 14v3"/></svg>
         <h3>Bucătăria completă</h3>
-        <p>Utilată ca acasă — plită, cuptor, frigider mare, vase și tot ce trebuie ca micul dejun să iasă ca la voi.</p>
+        <p>Complet utilată — plită, cuptor, frigider încăpător, vase și toate cele necesare pregătirii meselor.</p>
       </article>
     </div>
   </div>
 </section>
 
-<section id="gaura-cheii" aria-label="Priveliștea prin gaura cheii">
+<section id="priveliste" aria-label="Terasa cu vedere spre munte">
   <div class="keyhole-stage" id="khStage">
     <div class="keyhole-pin">
       <div class="kh-mask" id="khMask">
-        <img src="img/terasa.jpg" alt="Terasa cu scaune suspendate și munții în fundal, văzută prin silueta unei găuri de cheie" loading="lazy">
+        <img src="img/terasa.jpg" alt="Terasa cu scaune suspendate și munții în fundal" loading="lazy">
       </div>
       <div class="kh-cap">
-        <p>Prin gaura cheii: muntele.</p>
+        <p>Vedere spre munte.</p>
         <span>Terasa de vest · scaunele suspendate</span>
       </div>
     </div>
@@ -591,7 +555,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
   <div class="gal-head wrap">
     <div>
       <p class="eyebrow rv">Galerie</p>
-      <h2 class="rv d1">Casa, <em>pe îndelete.</em></h2>
+      <h2 class="rv d1">Galeria <em>proprietății.</em></h2>
     </div>
     <div class="gal-nav rv d2">
       <button class="gal-btn" id="galPrev" aria-label="Fotografia anterioară">
@@ -637,14 +601,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
 <section id="imprejurimi">
   <div class="wrap">
     <p class="eyebrow rv">Împrejurimi</p>
-    <h2 class="rv d1">De la poartă, <em>în toate părțile bune.</em></h2>
-    <p class="sub rv d2">Casa stă chiar pe Drumul Carului (E574), între Bran și Moieciu — punct de plecare firesc pentru tot ce are zona mai frumos.</p>
+    <h2 class="rv d1">Poziționare <em>și împrejurimi.</em></h2>
+    <p class="sub rv d2">Proprietatea este situată pe Drumul Carului (E574), între Bran și Moieciu — un punct de plecare convenabil către principalele obiective ale zonei.</p>
     <div class="rows">
       <div class="row rv">
         <span class="km">8<i>km</i></span>
         <div>
           <h3>Castelul Bran</h3>
-          <p>Cel mai vizitat castel al României — mergeți dimineața devreme, înaintea autocarelor, și sunteți înapoi la ciubăr până la prânz.</p>
+          <p>Cel mai vizitat castel al României; recomandăm vizitarea dimineața devreme, înaintea fluxului principal de turiști.</p>
         </div>
         <span class="go">~ 10 min cu mașina</span>
       </div>
@@ -652,7 +616,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
         <span class="km">12<i>km</i></span>
         <div>
           <h3>Cheile Grădiștei & Fundata</h3>
-          <p>Sus, pe platoul dintre Bucegi și Piatra Craiului — sanie și schi iarna, drumeții blânde și fân cosit vara.</p>
+          <p>Complex turistic pe platoul dintre Bucegi și Piatra Craiului — pârtii de schi și sanie iarna, trasee de drumeție vara.</p>
         </div>
         <span class="go">~ 15 min cu mașina</span>
       </div>
@@ -660,15 +624,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
         <span class="km">25<i>km</i></span>
         <div>
           <h3>Parcul Național Piatra Craiului</h3>
-          <p>Creasta de calcar cea mai spectaculoasă din Carpați — trasee de o zi din Zărnești sau Măgura, pentru toate nivelurile.</p>
+          <p>Trasee montane de o zi, cu plecare din Zărnești sau Măgura, pentru toate nivelurile de experiență.</p>
         </div>
         <span class="go">~ 30 min cu mașina</span>
       </div>
       <div class="row rv">
         <span class="km">30<i>km</i></span>
         <div>
-          <h3>Brașov — centrul vechi</h3>
-          <p>Piața Sfatului, Biserica Neagră, Strada Sforii — o după-amiază de oraș, apoi înapoi la liniștea de pe Drumul Carului.</p>
+          <h3>Brașov — centrul istoric</h3>
+          <p>Piața Sfatului, Biserica Neagră și Strada Sforii — principalele obiective ale orașului, la o distanță convenabilă.</p>
         </div>
         <span class="go">~ 40 min cu mașina</span>
       </div>
@@ -679,18 +643,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
 <section id="tarife">
   <div class="wrap">
     <p class="eyebrow rv">Tarife</p>
-    <h2 class="rv d1">Un singur preț: <em>casa întreagă.</em></h2>
-    <p class="sub rv d2">Nu închiriem camere separate și nu adăugăm taxe pe persoană. Prețul e pe noapte, pentru toată casa — până la 10 oaspeți.</p>
+    <h2 class="rv d1">Tarif unic: <em>întreaga vilă.</em></h2>
+    <p class="sub rv d2">Închirierea se face exclusiv pentru întreaga proprietate. Tariful este per noapte, include toate facilitățile și este valabil pentru maximum 10 oaspeți, fără taxe suplimentare pe persoană.</p>
     <div class="price-grid">
       <div class="price rv">
         <span class="per">Luni — Joi</span>
         <div class="lei">1.400 <i>lei / noapte</i></div>
-        <p>Toată casa, în timpul săptămânii — ideal pentru escapade liniștite și lucru la distanță cu vedere la munte.</p>
+        <p>Întreaga vilă, pentru maximum 10 oaspeți — tarif valabil în zilele lucrătoare ale săptămânii.</p>
       </div>
       <div class="price hot rv d1">
         <span class="per">Vineri — Duminică</span>
         <div class="lei">1.700 <i>lei / noapte</i></div>
-        <p>Weekendul întreg al grupului vostru: saună, grătar, vatră de foc și zece locuri la masă.</p>
+        <p>Întreaga vilă, pentru maximum 10 oaspeți — tarif valabil pentru zilele de weekend.</p>
       </div>
     </div>
     <div class="terms rv d2">
@@ -709,7 +673,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
         Scrie pe WhatsApp
       </a>
     </div>
-    <p class="tarife-note rv d3">Rezervarea se face direct, telefonic — fără comisioane de platformă. Notă 10/10 pe Booking.com.</p>
+    <p class="tarife-note rv d3">Rezervările se efectuează direct, telefonic, fără comisioane de intermediere. Notă 10/10 pe Booking.com.</p>
   </div>
 </section>
 
@@ -717,7 +681,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
   <div class="wrap">
     <div class="contact-hero">
       <p class="eyebrow rv">Contact & rezervări</p>
-      <h2 class="rv d1">Cheia <em>vă așteaptă.</em></h2>
+      <h2 class="rv d1">Rezervări <em>și informații.</em></h2>
       <a class="big-tel rv d2" href="tel:+40731234398">0731 234 398</a>
     </div>
     <div class="contact-meta rv d3">
@@ -740,7 +704,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
     </div>
     <footer>
       <span>© <span id="yr">2026</span> Xclusive House · Moieciu, Brașov</span>
-      <span class="fx">toată casa. o singură cheie.</span>
+      <span class="fx">vila întreagă, în regim exclusiv</span>
       <span>Site de prezentare — rezervări exclusiv telefonic</span>
     </footer>
   </div>
@@ -767,26 +731,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offs
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
   }, {threshold:.14, rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
-
-  /* key rail progress */
-  var rail = document.getElementById('rail'),
-      key  = document.getElementById('railKey'),
-      lbl  = document.getElementById('railLbl'),
-      track = rail ? rail.querySelector('.track') : null;
-  function onRail(){
-    if(!rail) return;
-    var doc = document.documentElement;
-    var p = window.scrollY / (doc.scrollHeight - window.innerHeight);
-    p = Math.max(0, Math.min(1, p));
-    var h = track.offsetHeight - 26;
-    key.style.top = (p * h) + 'px';
-    var open = p > 0.97;
-    key.style.transform = 'translate(-50%,0) rotate(' + (open ? 45 : 0) + 'deg)';
-    if (rail.classList.toggle('open', open)) {}
-    lbl.textContent = open ? 'descuiat' : 'se descuie';
-  }
-  window.addEventListener('scroll', onRail, {passive:true});
-  window.addEventListener('resize', onRail); onRail();
 
   /* keyhole zoom */
   var stage = document.getElementById('khStage'), mask = document.getElementById('khMask');
